@@ -14,7 +14,7 @@ router.get('/', checkAuth, cardsCtrl.index)
 router.get('/:id', checkAuth, cardsCtrl.show)
 
 router.post('/', checkAuth, cardsCtrl.create)
-router.post('/:id/comments', checkAuth, cardsCtrl.createTip)
+router.post('/:id/tips', checkAuth, cardsCtrl.createTip)
 
 router.put('/:id', checkAuth, cardsCtrl.update)
 
