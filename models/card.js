@@ -15,14 +15,14 @@ const tipSchema = new Schema(
 
 const cardSchema = new Schema(
   {
-    question: {
+    text: {
       type: String,
       required: true,
     },
     category: {
       type: String,
       required: true,
-      enum: ['News', 'Sports', 'Games', 'Movies', 'Music', 'Television'],
+      enum: ['Behavioral', 'Computer Science', 'Javascript', 'Front End', 'React', 'Styling', 'Python', 'Databases', 'SQL', 'Other'],
     },
     tips: [tipSchema],
     author: { type: Schema.Types.ObjectId, ref: 'Profile' 
