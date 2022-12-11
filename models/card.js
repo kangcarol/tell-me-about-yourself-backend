@@ -19,10 +19,14 @@ const cardSchema = new Schema(
       type: String,
       required: true,
     },
+    source: {
+      type: String,
+      required: false,
+    },
     category: {
       type: String,
       required: true,
-      enum: ['Behavioral', 'Computer Science', 'Javascript', 'Front End', 'React', 'Styling', 'Python', 'Databases', 'SQL', 'Other'],
+      enum: ['Behavioral', 'Computer Science', 'Javascript', 'Front End', 'React', 'Styling', 'Python', 'Databases', 'Back End', 'Other'],
     },
     tips: [tipSchema],
     author: { type: Schema.Types.ObjectId, ref: 'Profile' 
