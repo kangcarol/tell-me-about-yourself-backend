@@ -19,6 +19,10 @@ const cardSchema = new Schema(
       type: String,
       required: true,
     },
+    answer: {
+      type: String,
+      required: false,
+    },
     source: {
       type: String,
       required: false,
