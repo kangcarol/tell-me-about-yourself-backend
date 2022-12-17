@@ -11,6 +11,7 @@ const router = Router()
 router.use(decodeUserFromToken)
 
 router.get('/', checkAuth, cardsCtrl.index)
+router.get('/behavioral', checkAuth, cardsCtrl.index)
 router.get('/:id', checkAuth, cardsCtrl.show)
 
 router.post('/', checkAuth, cardsCtrl.create)
