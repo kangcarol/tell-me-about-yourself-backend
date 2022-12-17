@@ -10,6 +10,18 @@ function index(req, res) {
   })
 }
 
+
+function show(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    res.json(profile)
+  })
+  .catch(err => {
+    console.log(err)
+    res.json(err)
+  })
+}
+
 function addPhoto(req, res) {
   const imageFile = req.files.photo.path
   Profile.findById(req.params.id)
@@ -29,4 +41,8 @@ function addPhoto(req, res) {
   })
 }
 
-export { index, addPhoto }
+export { 
+  index, 
+  show, 
+  addPhoto 
+}
