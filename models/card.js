@@ -2,16 +2,16 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const tipSchema = new Schema(
-  {
-    text: {
-      type: String,
-      required: true
-    },
-    author: { type: Schema.Types.ObjectId, ref: 'Profile' }
-  },
-  { timestamps: true }
-)
+// const tipSchema = new Schema(
+//   {
+//     text: {
+//       type: String,
+//       required: true
+//     },
+//     author: { type: Schema.Types.ObjectId, ref: 'Profile' }
+//   },
+//   { timestamps: true }
+// )
 
 const cardSchema = new Schema(
   {
@@ -20,6 +20,10 @@ const cardSchema = new Schema(
       required: true,
     },
     answer: {
+      type: String,
+      required: false,
+    },
+    hint: {
       type: String,
       required: false,
     },
@@ -32,7 +36,7 @@ const cardSchema = new Schema(
       required: true,
       enum: ['Behavioral', 'Computer Science', 'Javascript', 'Frontend', 'React', 'Styling', 'Python', 'Databases', 'Backend', 'Other'],
     },
-    tips: [tipSchema],
+    // tips: [tipSchema],
     author: { type: Schema.Types.ObjectId, ref: 'Profile' 
     },
   },

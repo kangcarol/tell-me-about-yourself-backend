@@ -34,7 +34,7 @@ const show = async (req, res) => {
   try {
     const card = await Card.findById(req.params.id)
       .populate('author')
-      .populate('tips.author')
+      // .populate('tips.author')
     res.status(200).json(card)
   } catch (err) {
     res.status(500).json(err)
